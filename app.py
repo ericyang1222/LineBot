@@ -22,7 +22,7 @@ import os
 #建立application物件
 app = Flask(__name__)
 #放入自己的LINE BOT-Channel Access Token
-line_bot_api = LineBotApi(os.getenv("CHANNEL_ACCESS_TOKEN")
+line_bot_api = LineBotApi(os.getenv("CHANNEL_ACCESS_TOKEN"))
 #放入自己的LINE BOT-Channel Secret
 handler = WebhookHandler(os.getenv("CHANNEL_SECRET"))
 
