@@ -26,7 +26,7 @@ line_bot_api = LineBotApi(os.getenv("CHANNEL_ACCESS_TOKEN")
 #放入自己的LINE BOT-Channel Secret
 handler = WebhookHandler(os.getenv("CHANNEL_SECRET"))
 
-
+                          
 #監聽所有來自 /callback的Post Request
 @app.route("/callback", methods = ['POST'])
 def callback():
