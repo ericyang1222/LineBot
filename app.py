@@ -16,12 +16,15 @@ from linebot.models import(
 
 import json
 
+#用於讀取環境變數
+import os
+
 #建立application物件
 app = Flask(__name__)
 #放入自己的LINE BOT-Channel Access Token
-line_bot_api = LineBotApi("qiuquf2apa19G8a2mxZcGJmCOIPfckibPCF1BqbQm/BwTjb02/KqYtNA8yMR6qUsmOcSXGZ2BcH7t04lc1lM5tUNMh9qYM73Bh+b4UbOlIi4KlAqX7is7cCeBjRWvHT3wao95nkLPsVqb7LJhM1XAgdB04t89/1O/w1cDnyilFU=")
+line_bot_api = LineBotApi(os.getenv("CHANNEL_ACCESS_TOKEN")
 #放入自己的LINE BOT-Channel Secret
-handler = WebhookHandler("e40a4cead4570c4a22d1205b04060bf2")
+handler = WebhookHandler(os.getenv("CHANNEL_SECRET"))
 
 
 #監聽所有來自 /callback的Post Request
